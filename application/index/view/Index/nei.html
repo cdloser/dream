@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>我要许愿-许愿网</title>
+<meta name="description" content="许愿网是一个专业在线许愿、在线发祝福、在线祝福、在线发愿望的平台，并为网友提供永久保存许愿服务的许愿网站。愿望不是一个遥不可及的事，只有心中有信念，许愿网相信每个愿望都可以实现。来许网(www.laixu.net)：来这里许愿！" />
+<meta name="keywords" content="发布愿望,我要许愿,增加愿望,帖愿望,许愿,愿望,许愿网,许愿树,许愿池,许愿瓶,许愿墙,许愿望,发祝福,在线祈福,许愿玻璃瓶,许愿精灵,许愿清单,我要许愿,许愿网站,实现愿望" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="__STATIC__css/bootstrap.css" />
+<link rel="stylesheet" href="__STATIC__css/common.css" />
+<link rel="stylesheet" href="__STATIC__css/common.css" />
+<link rel="shortcut icon" href="/Public/Common/Images/favicon.ico" />
+<script type="text/JavaScript" src='__STATIC__js/jquery.min.js'></script>
+<script type="text/JavaScript" src='__STATIC__js/bootstrap.min.js'></script>
+<script type="text/JavaScript" src='__STATIC__js/jquery.SuperSlide.2.1.1.js'></script>
+<script type="text/javascript" src="__STATIC__js/common.js"></script>
+<link rel="stylesheet" href="__STATIC__css/index.css" />
+<script type="text/javascript">
+    window.UEDITOR_HOME_URL = '/Data/Ueditor.add/';
+    window.onload = function(){
+        window.UEDITOR_CONFIG.initialFrameHeight = 100;
+        window.UEDITOR_CONFIG.imageUrl = "/Index/Index/upload.html";           //图片上传提交地址
+        window.UEDITOR_CONFIG.imagePath = '/Uploads/';   
+        UE.getEditor('content');
+    }
+    $(function(){ 
+       $('#nav_add').addClass('cur');
+    }) 
+</script>
+<script type="text/javascript" src="__STATIC__js/ueditor.config.min.js"></script>
+<script type="text/javascript" src="__STATIC__js/ueditor.all.js"></script>
+<script type="text/javascript">
+    function resize_window(){
+        $(".MainBar").width($(window).width()-150);
+    }
+    $(function(){
+        resize_window();
+        $(window).resize(function(){
+            resize_window();
+        })
+
+        $('#type').change(function(){
+            $('#typetext').text($('#type').val());
+        });
+        $('#content').change(function(){
+            $('#contenttext').text($('#content').val());
+        });
+        $('#fromname').blur(function(){
+            $('#fromtext').text($('#fromname').val());
+        });
+        $('.radio').click(function(){
+            $('#typetext').removeClass('c1 c2 c3 c4 c5 c6 c7');
+            $('#typetext').addClass('c'+$(this).val());
+        });
+    });
+</script>
+</head>
+<body>
+<link rel="stylesheet" href="__STATIC__css/index.css" />
+<link rel="stylesheet" href="__STATIC__css/jquery.mCustomScrollbar.css" />
+<script type="text/javascript">
+    function resize_window(){
+        $(".MainBar").width($(window).width()-150);
+    }
+    $(function(){
+        resize_window();
+        $(window).resize(function(){
+            resize_window();
+        })
+    })
+</script>
+<div class="SideBar">
+    <a href="/" class="h1"  title="许愿网" style="background:#073553 url(__STATIC__images/57812106b8c1e.png)  no-repeat center center;"><h1 title="许愿网">许愿网</h1></a>
+    <a id="nav_add" href="{:url('Index/add')}" title="立即许愿">
+        <span class="glyphicon glyphicon-plus"></span>
+    </a>
+    <a id="nav_search" href="/search" title="搜索愿望">
+        <span class="glyphicon glyphicon-search"></span>
+    </a>
+    <a id="nav_user" href="/user.html" title="许愿会员中心">
+        <span class="glyphicon glyphicon-user"></span>
+    </a>
+    <a id="nav_html_1" href="/html/about.html" title="关于许愿网">
+        <span class="glyphicon glyphicon-info-sign"></span>
+    </a>
+    <a id="nav_html_2" href="/html/note.html" title="许愿网建议">
+        <span class="glyphicon glyphicon-comment"></span>
+    </a>
+</div>
+
+
+
+<div class="MainBar">
+	<div class="box">
+		<div class="wrap">
+			<div class="wishshow">
+			    <div class="left">
+			        <i class="c1">
+						{if condition="$name.type eq '1'"} 求吉祥运气 {/if}
+						{if condition="$name.type eq '2'"} 求财富物品 {/if}
+						{if condition="$name.type eq '3'"} 求爱情缘分 {/if}
+						{if condition="$name.type eq '4'"} 求幸福开心 {/if}
+						{if condition="$name.type eq '5'"} 求学业晋升 {/if}
+						{if condition="$name.type eq '6'"} 求事业成就 {/if}
+						{if condition="$name.type eq '7'"} 求亲情友情 {/if}
+						{if condition="$name.type eq '8'"} 求平安放心 {/if}
+						{if condition="$name.type eq '9'"} 求琐事化解 {/if}
+						{if condition="$name.type eq '10'"} 求健康安逸 {/if}
+						{if condition="$name.type eq '0'"} 其它 {/if}
+					</i>
+			        <div class="p"><p>{$name.content}<br/></p></div>
+			        <div class="s"><em>许愿人名：{$name.fromname}</em><br/>许愿时间：{$name.time|date="Y-m-d H:i:s",###}</div>
+			        <div class="digg_1">
+					    <a href="javascript:;" onclick="ding(324,'wish');" class="div orange">
+					        <span class="glyphicon glyphicon-thumbs-up"></span>
+					        <b id="ding"><script type="text/javascript" src="/Index/Index/dingNum/mo/wish/id/324.html"></script></b>
+					    </a>
+					    <a href="javascript:;" onclick="cai(324,'wish');" class="div">
+					        <span class="glyphicon glyphicon-thumbs-down"></span>
+					        <b id="cai"><script type="text/javascript" src="/Index/Index/caiNum/mo/wish/id/324.html"></script></b>
+					    </a>
+
+					    <a href="/Index/Index/favor/hid/324/mo/wish/statu/1.html"  class="div pink" title="加入收藏">
+						        <span class="glyphicon glyphicon-heart"></span><b>收藏</b>
+						    </a>
+											</div>
+
+
+			        <div class="span">
+			            <a title="上一条" href="/wish/1709035357.html" >上一条</a>
+			            <a title="下一条" href="javascript:alert('已经是最后一条了')" >下一条</a>
+			        </div>
+			    </div>
+			    <!-- <div class="right"> -->
+			    	<!-- <div class="commentWrap"> -->
+                        <!-- <div class="edit"> -->
+                            <!-- <script type="text/javascript" src="/Public/Common/Js/comment.js"/></script> -->
+                            <!-- <div class="form"> -->
+                                <!-- <form method="post" action="/Index/Index/comment.html" name="commentform"> -->
+                                    <!-- <textarea class="textarea" name="content" id="content"></textarea> -->
+                                    <!-- <input type="hidden" name="hid" value="324"/> -->
+                                    <!-- <input type="hidden" name="uid" value=""/> -->
+                                    <!-- <input type="hidden" name="mo" value="wish"/> -->
+                                    <!-- <div class="submit"> -->
+                                    <!-- <div class="count">共有0条评论，评价最遵循国家法律，否则将封号处理...</div> -->
+                                    <!-- <input type="submit" class="button button-highlight" value="发布" onclick="return comment()"/> -->
+                                    <!-- </div> -->
+                                <!-- </form> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+			    <!-- </div> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/Public/Common/Js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+    (function($){
+        $(window).load(function(){
+            $(".right").mCustomScrollbar({
+                set_width:false, /*optional element width: boolean, pixels, percentage*/
+                set_height:false, /*optional element height: boolean, pixels, percentage*/
+                horizontalScroll:false, /*scroll horizontally: boolean*/
+                scrollInertia:950, /*scrolling inertia: integer (milliseconds)*/
+                mouseWheel:true, /*mousewheel support: boolean*/
+                mouseWheelPixels:"auto", /*mousewheel pixels amount: integer, "auto"*/
+                autoDraggerLength:true, /*auto-adjust scrollbar dragger length: boolean*/
+                autoHideScrollbar:false, /*auto-hide scrollbar when idle*/
+                scrollButtons:{ /*scroll buttons*/
+                    enable:false, /*scroll buttons support: boolean*/
+                    scrollType:"continuous", /*scroll buttons scrolling type: "continuous", "pixels"*/
+                    scrollSpeed:"auto", /*scroll buttons continuous scrolling speed: integer, "auto"*/
+                    scrollAmount:40 /*scroll buttons pixels scroll amount: integer (pixels)*/
+                },
+                advanced:{
+                    updateOnBrowserResize:true, /*update scrollbars on browser resize (for layouts based on percentages): boolean*/
+                    updateOnContentResize:false, /*auto-update scrollbars on content resize (for dynamic content): boolean*/
+                    autoExpandHorizontalScroll:false, /*auto-expand width for horizontal scrolling: boolean*/
+                    autoScrollOnFocus:true, /*auto-scroll on focused elements: boolean*/
+                    normalizeMouseWheelDelta:false /*normalize mouse-wheel delta (-1/1)*/
+                },
+                contentTouchScroll:true, /*scrolling by touch-swipe content: boolean*/
+                callbacks:{
+                    onScrollStart:function(){}, /*user custom callback function on scroll start event*/
+                    onScroll:function(){}, /*user custom callback function on scroll event*/
+                    onTotalScroll:function(){}, /*user custom callback function on scroll end reached event*/
+                    onTotalScrollBack:function(){}, /*user custom callback function on scroll begin reached event*/
+                    onTotalScrollOffset:0, /*scroll end reached offset: integer (pixels)*/
+                    onTotalScrollBackOffset:0, /*scroll begin reached offset: integer (pixels)*/
+                    whileScrolling:function(){} /*user custom callback function on scrolling event*/
+                },
+                theme:"light" /*"light", "dark", "light-2", "dark-2", "light-thick", "dark-thick", "light-thin", "dark-thin"*/
+            });
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
